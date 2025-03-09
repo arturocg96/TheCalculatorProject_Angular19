@@ -1,0 +1,8 @@
+<div>
+    <h2>Lista de Calculadoras</h2>
+    @for (calculator of calculators; track  calculator.id){
+        <app-calculator-card [calculator]="calculator"></app-calculator-card>
+    }
+       
+    
+  </div>

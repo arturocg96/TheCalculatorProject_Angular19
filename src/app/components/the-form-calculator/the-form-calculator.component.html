@@ -1,0 +1,37 @@
+<form [formGroup]="calculatorForm">
+    <label>
+      Número A:
+      <input type="number" formControlName="numberA" aria-describedby="errorA" />
+    </label>
+  
+    @if (calculatorForm.get('numberA')?.invalid && calculatorForm.get('numberA')?.touched) {
+      <div id="errorA">
+        @if (calculatorForm.get('numberA')?.errors?.['required']) {
+          <small>Número A es obligatorio.</small>
+        }
+      </div>
+    }
+  
+    <p>{{ calculator!.symbol }}</p>
+  
+    <label>
+      Número B:
+      <input type="number" formControlName="numberB" aria-describedby="errorB" />
+    </label>
+  
+    @if (calculatorForm.get('numberB')?.invalid && calculatorForm.get('numberB')?.touched) {
+      <div id="errorB">
+        @if (calculatorForm.get('numberB')?.errors?.['required']) {
+          <small>Número B es obligatorio.</small>
+        }
+      </div>
+    }
+  
+    <br />
+    <button type="button" (click)="calculate()" [disabled]="calculatorForm.invalid">Calcular</button>
+  </form>
+  
+  @if (result !== undefined) {
+    <p>Resultado: {{ result }}</p>
+  }
+  
