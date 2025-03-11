@@ -1,7 +1,9 @@
-<h1>Calculadora {{calculator!.id}} {{calculator!.name}}</h1>
+<div class="calc wrapper">
+<h3 class="calc-title">Calculadora {{calculator!.id}}: <span class="calc-subtitle">{{calculator!.name}}</span></h3>
 <div>
     <app-the-form-calculator [calculator]="calculator"></app-the-form-calculator>
 </div>
-<div>
+<div class="calc-button">
    <app-the-button></app-the-button>
+</div>
 </div>

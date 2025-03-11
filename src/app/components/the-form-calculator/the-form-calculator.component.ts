@@ -15,6 +15,7 @@ export class TheFormCalculatorComponent {
   private fb = inject(FormBuilder);
   calculatorForm!: FormGroup;
   result?: number; 
+  active?=true;
 
   constructor() {
     this.calculatorForm = this.fb.group({
@@ -30,12 +31,15 @@ export class TheFormCalculatorComponent {
 
     const { numberA, numberB } = this.calculatorForm.value;
     this.result = this.calculator.calculate(numberA, numberB);
+    this.active=false;
   }
 
-  onEnter(event: KeyboardEvent) {
-    event.preventDefault(); 
-    if (!this.calculatorForm.invalid) {
-      this.calculate(); 
-    }
+  change(){
+    this.active=true;
+    this.calculatorForm.reset();
+    this.result=undefined;
   }
+
+    
+  
 }

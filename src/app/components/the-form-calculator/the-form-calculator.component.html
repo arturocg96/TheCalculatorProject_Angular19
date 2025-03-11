@@ -1,37 +1,55 @@
+
 <form [formGroup]="calculatorForm">
-    <label>
+  <div class="calc-form">
+  <div>
+  <label>
       Número A:
-      <input type="number" formControlName="numberA" aria-describedby="errorA" />
+      <input class="input" type="number" formControlName="numberA" aria-describedby="errorA" />
     </label>
   
     @if (calculatorForm.get('numberA')?.invalid && calculatorForm.get('numberA')?.touched) {
       <div id="errorA">
         @if (calculatorForm.get('numberA')?.errors?.['required']) {
-          <small>Número A es obligatorio.</small>
+          <small class="alert-form">Número A es obligatorio.</small>
         }
       </div>
     }
-  
-    <p>{{ calculator!.symbol }}</p>
+    </div>
+    <div> <p class="calc-symbol">{{ calculator!.symbol }}</p></div>
+  <div>
+   
   
     <label>
       Número B:
-      <input type="number" formControlName="numberB" aria-describedby="errorB" />
+      <input class="input" type="number" formControlName="numberB" aria-describedby="errorB" />
     </label>
   
     @if (calculatorForm.get('numberB')?.invalid && calculatorForm.get('numberB')?.touched) {
       <div id="errorB">
         @if (calculatorForm.get('numberB')?.errors?.['required']) {
-          <small>Número B es obligatorio.</small>
+          <small class="alert-form">Número B es obligatorio.</small>
         }
       </div>
     }
+    <div> <p class="calc-symbol">=</p></div>
+
+    @if(active){
+      <button type="button" class="button calc-button"(click)="calculate()" [disabled]="calculatorForm.invalid">Calcular</button>
+    } @else {
+      <div class="result">
+        @if (result !== undefined) {
+          <p>Resultado: {{ result }}</p>
+          <button class="button"(click)="change()">RESET</button>
+        }
+      </div>
+
+    }
   
-    <br />
-    <button type="button" (click)="calculate()" [disabled]="calculatorForm.invalid">Calcular</button>
+   
+  </div>
+</div>
   </form>
   
-  @if (result !== undefined) {
-    <p>Resultado: {{ result }}</p>
-  }
+  
+ 
   

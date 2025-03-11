@@ -7,7 +7,9 @@ import { CalculatorModel } from '../models/calculator.model';
 export class CalculatorService {
   #calculators: CalculatorModel[] = [
     new CalculatorModel(1, 'Suma', '+', (a, b) => a + b),
-    new CalculatorModel(2, 'Resta', '−', (a, b) => a - b)
+    new CalculatorModel(2, 'Resta', '−', (a, b) => a - b),
+ 
+    
   ];
 
 

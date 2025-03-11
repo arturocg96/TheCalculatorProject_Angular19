@@ -1,8 +1,9 @@
-<div>
-    <h2>Lista de Calculadoras</h2>
+<div class=" wrapper">
+    <h1 class="page-title">Lista de <span class= "subtitle">Calculadoras</span></h1>
+    <div class="equal-columns">
     @for (calculator of calculators; track  calculator.id){
         <app-calculator-card [calculator]="calculator"></app-calculator-card>
     }
-       
+</div>  
     
   </div>
