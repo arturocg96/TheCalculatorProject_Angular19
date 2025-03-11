@@ -7,10 +7,8 @@
 }
 
 
-.calc-button:disabled {
-    background-color: #ccc; /* Color de fondo más gris */
-    color: #888; /* Texto más tenue */
-    cursor: not-allowed; /* Cambia el cursor */
-    opacity: 0.6; /* Hace que se vea más apagado */
+
+
+  .calc-symbol {
+    font-size: 2rem;
   }
-  
