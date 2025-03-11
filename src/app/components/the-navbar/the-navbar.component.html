@@ -17,6 +17,7 @@
           routerLinkActive="active"
           class="nav-item"
           [ngClass]="{ 'closed-color': isMenuOpen, 'open-color': !isMenuOpen }"
+           (click)="closeMenu()"
         >
           Lista de calculadoras
         </a>
@@ -24,3 +25,5 @@
     </ul>
   </div>
 </div>
+
+

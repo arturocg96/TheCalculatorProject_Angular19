@@ -297,7 +297,6 @@
   .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
   }
-  
   .wrapper {
     --wrapper-max-width: 1130px;
     --wrapper-padding: 1.5rem;

@@ -15,4 +15,7 @@ export class TheNavbarComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }
