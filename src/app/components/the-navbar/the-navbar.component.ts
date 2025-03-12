@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -12,10 +12,27 @@ export class TheNavbarComponent {
 
   isMenuOpen = false;
 
+  constructor() {
+    this.checkScreenSize(); 
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
   closeMenu() {
     this.isMenuOpen = false;
   }
+
+  @HostListener('window:resize', [])
+  onResize(): void {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize(): void {
+    const screenWidth = window.innerWidth;
+    if (screenWidth > 768) { 
+      this.isMenuOpen = false;
+    }
+  }
+
 }

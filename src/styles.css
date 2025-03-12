@@ -128,7 +128,7 @@
     --background-cards: var(--clr-blue-afi);
     --background-heading: var(--clr-blue-afi);
     --background-aside: var(--clr-blue-afi-soft);
-    --background-hamburger: var(--clr-blue-afi-soft);
+    --background-hamburger: var(--clr-blue-afi);
     --background-button: var(--clr-blue-afi-soft);
     --background-button-disabled: var(--clr-grey);
 
@@ -193,7 +193,7 @@
 
   a:hover,
   a:focus-visible {
-    color: var(--clr-blue-afi--soft);
+    color: var(--clr-blue-afi-soft);
   }
 
   .active {

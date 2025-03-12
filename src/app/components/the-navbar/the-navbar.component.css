@@ -66,13 +66,14 @@
 }
 
 .open-color {
-    color: var(--clr-white); 
+    color: var(--clr-black); 
 }
 
 .closed-color {
-    color:  var(--clr-blue-afi); 
+    color:  var(--clr-black); 
+    font-size: var(--font-size-lg);
 }
 
 .active{
-  color: var(--clr-blue-afi-soft); 
+  color: var(--clr-white); 
 }
