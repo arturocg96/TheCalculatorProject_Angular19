@@ -72,3 +72,7 @@
 .closed-color {
     color:  var(--clr-blue-afi); 
 }
+
+.active{
+  color: var(--clr-blue-afi-soft); 
+}

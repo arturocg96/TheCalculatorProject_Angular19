@@ -3,50 +3,42 @@
     <div>
       <label>
         Número A:
-        <input
-          class="input"
-          type="number"
-          formControlName="numberA"
-          aria-describedby="errorA"
-        />
+        <input class="input" type="number" formControlName="numberA" />
       </label>
 
-      @if (calculatorForm.get('numberA')?.invalid &&
-      calculatorForm.get('numberA')?.touched) {
-      <div id="errorA">
-        @if (calculatorForm.get('numberA')?.errors?.['required']) {
+      <div id="errorA" class="error-container">
+        @if (calculatorForm.get('numberA')?.touched &&
+        calculatorForm.get('numberA')?.hasError('required')) {
         <small class="alert-form">Número A es obligatorio.</small>
         }
       </div>
-      }
     </div>
+
     <div>
-      <p class="calc-symbol">{{ calculator!.symbol }}</p>
+      <p class="calc-symbol">{{ calculator?.symbol }}</p>
     </div>
+
     <div>
       <label>
         Número B:
-        <input
-          class="input"
-          type="number"
-          formControlName="numberB"
-          aria-describedby="errorB"
-        />
+        <input class="input" type="number" formControlName="numberB" />
       </label>
-
-      @if (calculatorForm.get('numberB')?.invalid &&
-      calculatorForm.get('numberB')?.touched) {
-      <div id="errorB">
-        @if (calculatorForm.get('numberB')?.errors?.['required']) {
-        <small class="alert-form">Número B es obligatorio.</small>
+      <div id="errorA" class="error-container">
+        @if (calculatorForm.get('numberB')?.touched &&
+        calculatorForm.get('numberB')?.hasError('required')) {
+        <div id="errorB">
+          <small class="alert-form">Número B es obligatorio.</small>
+        </div>
         }
       </div>
-      }
     </div>
-    <div><p class="calc-symbol">=</p></div>
 
     <div>
-      @if(active){
+      <p class="calc-symbol">=</p>
+    </div>
+
+    <div>
+      @if (active) {
       <button
         type="button"
         class="button primary-button"
@@ -56,18 +48,12 @@
         Calcular
       </button>
       } @else {
-      <div class="result">
+      <div class="result flow">
         @if (result !== undefined) {
         <p>Resultado: {{ result }}</p>
-        <button
-          class="button secondary-button button-margin"
-          (click)="change()"
-        >
-          RESET
-        </button>
+        <button class="button secondary-button" (click)="reset()">RESET</button>
         }
       </div>
-
       }
     </div>
   </div>

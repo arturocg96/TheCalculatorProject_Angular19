@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { CalculatorModel } from '../../models/calculator.model';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -8,38 +8,34 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   templateUrl: './the-form-calculator.component.html',
   styleUrl: './the-form-calculator.component.css'
 })
-export class TheFormCalculatorComponent {
+export class TheFormCalculatorComponent implements OnInit {
 
-  @Input() calculator: CalculatorModel | undefined; 
-  
-  private fb = inject(FormBuilder);
+  @Input() calculator: CalculatorModel | undefined;
+
   calculatorForm!: FormGroup;
-  result?: number; 
-  active?=true;
+  result?: number;
+  active: boolean = true;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
     this.calculatorForm = this.fb.group({
-      numberA: ['', [Validators.required]],
-      numberB: ['',[Validators.required]]
+      numberA: ['', Validators.required],
+      numberB: ['', Validators.required]
     });
-
-    
   }
 
-  calculate() {
+  calculate(): void {
     if (!this.calculator || this.calculatorForm.invalid) return;
 
     const { numberA, numberB } = this.calculatorForm.value;
     this.result = this.calculator.calculate(numberA, numberB);
-    this.active=false;
+    this.active = false;
   }
 
-  change(){
-    this.active=true;
+  reset(): void {
+    this.active = true;
     this.calculatorForm.reset();
-    this.result=undefined;
+    this.result = undefined;
   }
-
-    
-  
 }

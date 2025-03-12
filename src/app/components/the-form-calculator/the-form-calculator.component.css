@@ -6,9 +6,15 @@
     
 }
 
-
-
-
   .calc-symbol {
-    font-size: 2rem;
+    font-size: var(--font-size-lg);
   }
+
+  .error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;  
+  }
+  
+ 
