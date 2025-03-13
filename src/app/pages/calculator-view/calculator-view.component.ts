@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CalculatorService } from '../../services/calculator.service';
 import { CalculatorModel } from '../../models/calculator.model';
 import { TheButtonComponent } from "../../components/the-button/the-button.component";
@@ -13,26 +13,24 @@ import { TheFormCalculatorComponent } from "../../components/the-form-calculator
 })
 export class CalculatorViewComponent {
 
-  private activeRoute = inject(ActivatedRoute);
+  #activeRoute = inject(ActivatedRoute);
+  #calculatorService = inject(CalculatorService);
+  #router = inject(Router);
   calculator: CalculatorModel | undefined;
 
-constructor(private calculatorService: CalculatorService) { }
-
-ngOnInit() {
-  this.activeRoute.params.subscribe((params: Params) => {
-    let id:number = Number(params['id']);
-    try {
-      let response = this.calculatorService.getCalculator(id);
-      this.calculator = response;
-      console.log(this.calculator);
-    } catch (error) {
-      console.error(error);
-    }
-  })}
 
 
-
-
+  ngOnInit() {
+    this.#activeRoute.params.subscribe((params: Params) => {
+      let id: number = Number(params['id']);
+  
+      if (isNaN(id) || !this.#calculatorService.getCalculator(id)) {
+        this.#router.navigate(['/calculators']);
+        return;
+      }
+  
+      this.calculator = this.#calculatorService.getCalculator(id);
+    });
+  }
+  
 }
-
-
