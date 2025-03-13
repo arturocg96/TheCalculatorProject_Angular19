@@ -18,3 +18,42 @@
   }
   
  
+
+  .calc-form {
+    max-width: 50vw; 
+    padding: 2rem;
+    border-radius: var(--border-radius-2);
+    background-color: var(--background-main);    
+  }
+  
+  @media (max-width: 1200px) {
+    .calc-form {
+      max-width: 60vw; 
+      padding: 1.5rem;
+    }
+  
+  
+  }
+
+  @media (max-width: 900px) {
+    .calc-form {
+      max-width: 75vw;
+      padding: 1.2rem;
+    }
+  
+   
+  }
+
+  @media (max-width: 600px) {
+    .calc-form {
+      max-width: 90vw;
+      padding: 1rem;
+    }
+  
+  
+  
+    .calc-symbol {
+      font-size: var(--fs-500);
+    }
+  }
+  

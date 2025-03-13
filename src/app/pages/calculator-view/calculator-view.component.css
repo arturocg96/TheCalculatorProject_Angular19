@@ -1,21 +1,41 @@
 .calc {
 
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.calc-button{
-    margin-top: 3rem;
-    
-}
-
-.button-margin{
-    margin-bottom: 1rem;
-}
 
 .calc-title {
-    margin-bottom: 3rem;
-  }
+    font-size: var(--fs-700);
+    font-weight: var(--fw-600);
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.calc-button {
+    margin-top: 3rem;
+
+}
+
+
+@media (max-width: 1200px) {
+    .calc-title {
+        font-size: var(--fs-700);
+    }
+}
+
+@media (max-width: 900px) {
+    .calc-title {
+        font-size: var(--fs-600);
+    }
+}
+
+@media (max-width: 600px) {
+    .calc-title {
+        font-size: var(--fs-500);
+    }
+}

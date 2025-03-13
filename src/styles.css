@@ -4,6 +4,9 @@
   *::after {
     box-sizing: border-box;
   }
+  html {
+    overflow-y: scroll;
+  }
 
   /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
   html {
@@ -393,4 +396,48 @@
     white-space: nowrap;
     width: 1px;
   }
+}
+
+
+@media (max-width: 1200px) {
+ 
+
+  .input {
+    font-size: var(--fs-400);
+    padding: 0.6rem;
+  }
+
+  .button {
+    font-size: var(--fs-300);
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+ 
+
+  .input {
+    font-size: var(--fs-300);
+    padding: 0.5rem;
+  }
+
+  .button {
+    font-size: var(--fs-300);
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+ 
+
+  .input {
+    font-size: var(--fs-300);
+    padding: 0.4rem;
+  }
+
+  .button {
+    font-size: var(--fs-300);
+    padding: 0.4rem 0.8rem;
+  }
+
 }
