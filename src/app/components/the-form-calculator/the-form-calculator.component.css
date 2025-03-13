@@ -25,6 +25,10 @@
     border-radius: var(--border-radius-2);
     background-color: var(--background-main);    
   }
+
+  .calc-button{
+    margin-top: 1rem;
+  }
   
   @media (max-width: 1200px) {
     .calc-form {
