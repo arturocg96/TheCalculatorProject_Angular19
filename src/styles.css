@@ -193,18 +193,9 @@
 
   a:hover,
   a:focus-visible {
-    color: var(--clr-blue-afi-soft);
-  }
+    color: var(--clr-blue-afi-soft);  }
 
-  
-  img {
-    border-radius: var(--border-radius-3);
-  }
 
-  
-
- 
-  
 }
 
 @layer layout {
