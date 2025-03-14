@@ -38,4 +38,5 @@ export class TheFormCalculatorComponent implements OnInit {
     this.calculatorForm.reset();
     this.result = undefined;
   }
+ 
 }

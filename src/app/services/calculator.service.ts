@@ -11,10 +11,12 @@ export class CalculatorService {
   ];
 
   getCalculators(): CalculatorModel[] {
-    return this.#calculators?.length ? this.#calculators : [];
+    return this.#calculators;
   }
 
   getCalculator(id: number): CalculatorModel | undefined {
     return this.#calculators.find((calc) => calc.id === id);
   }
+
+  
 }

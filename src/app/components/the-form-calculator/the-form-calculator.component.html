@@ -1,12 +1,12 @@
 <form [formGroup]="calculatorForm">
-  <div class="calc-form flow">
+  <div class="calc-form">
     <div>
       <label>
         Número A:
         <input class="input" type="number" formControlName="numberA" />
       </label>
 
-      <div id="errorA" class="error-container">
+      <div class="error-container">
         @if (calculatorForm.get('numberA')?.touched &&
         calculatorForm.get('numberA')?.hasError('required')) {
         <small class="alert-form">Número A es obligatorio.</small>

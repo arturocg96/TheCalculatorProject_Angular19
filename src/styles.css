@@ -238,16 +238,6 @@
     --wrapper-max-width: 1700px;
   }
 
-  .section {
-    padding-block: 3.75rem;
-
-    @media (min-width: 760px) {
-      padding-block: 8rem;
-
-     
-    }
-  }
-
   .equal-columns {
     display: grid;
     gap: 1rem;
@@ -258,6 +248,18 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  .section {
+    padding-block: 3.75rem;
+
+    @media (min-width: 760px) {
+      padding-block: 8rem;
+
+     
+    }
+  }
+
+  
 }
 
 @layer components {
@@ -380,9 +382,48 @@
     margin: 0;
   }
 
-
+  @media (max-width: 1200px) {
  
 
+    .input {
+      font-size: var(--fs-400);
+      padding: 0.6rem;
+    }
+  
+    .button {
+      font-size: var(--fs-300);
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  
+  @media (max-width: 900px) {
+   
+  
+    .input {
+      font-size: var(--fs-300);
+      padding: 0.5rem;
+    }
+  
+    .button {
+      font-size: var(--fs-300);
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+   
+  
+    .input {
+      font-size: var(--fs-300);
+      padding: 0.4rem;
+    }
+  
+    .button {
+      font-size: var(--fs-300);
+      padding: 0.4rem 0.8rem;
+    }
+  
+  }
 
 }
 
@@ -399,45 +440,3 @@
 }
 
 
-@media (max-width: 1200px) {
- 
-
-  .input {
-    font-size: var(--fs-400);
-    padding: 0.6rem;
-  }
-
-  .button {
-    font-size: var(--fs-300);
-    padding: 0.6rem 1.2rem;
-  }
-}
-
-@media (max-width: 900px) {
- 
-
-  .input {
-    font-size: var(--fs-300);
-    padding: 0.5rem;
-  }
-
-  .button {
-    font-size: var(--fs-300);
-    padding: 0.5rem 1rem;
-  }
-}
-
-@media (max-width: 600px) {
- 
-
-  .input {
-    font-size: var(--fs-300);
-    padding: 0.4rem;
-  }
-
-  .button {
-    font-size: var(--fs-300);
-    padding: 0.4rem 0.8rem;
-  }
-
-}
